@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using S4_PC1_Lab.Models;
 using S4_PC1_Lab.Data;
+using System.Linq;
 
 namespace S4_PC1_Lab.Controllers
 {
@@ -17,7 +18,7 @@ namespace S4_PC1_Lab.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_context.DataProductos.ToList());
         }
 
 
@@ -32,7 +33,7 @@ namespace S4_PC1_Lab.Controllers
             _context.Add(objProducto);
             _context.SaveChanges();
             ViewData["Message"] = "Producto Registrado";
-            return View("Index");
+            return View();
         }
 
 

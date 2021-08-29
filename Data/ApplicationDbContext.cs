@@ -12,7 +12,7 @@ namespace S4_PC1_Lab.Data
 
         }
 
-        public DbSet<S4_PC1_Lab.Models.Producto> DataContactos { get; set; }
+        public DbSet<S4_PC1_Lab.Models.Producto> DataProductos { get; set; }
 
 
 
