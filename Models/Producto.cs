@@ -9,7 +9,7 @@ namespace S4_PC1_Lab.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
-        public int id { get; set;}
+        public int Id { get; set;}
 
         [Column("nombre")]
         public string Nombre { get; set;}

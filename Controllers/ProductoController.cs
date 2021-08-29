@@ -36,6 +36,24 @@ namespace S4_PC1_Lab.Controllers
             return View();
         }
 
+        public IActionResult Edit(int id)
+        {
+            Producto objProducto = _context.DataProductos.Find(id);
+            if(objProducto == null){
+                return NotFound();
+            }
+            return View(objProducto);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id,[Bind("Id,Nombre,Categoria,Precio,Descuento")] Producto objProducto)
+        {
+             _context.Update(objProducto);
+             _context.SaveChanges();
+              ViewData["Message"] = "El producto ya esta actualizado";
+             return View(objProducto);
+        }
+
 
     }
 }
