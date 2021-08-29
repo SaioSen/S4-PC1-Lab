@@ -1,0 +1,44 @@
+@model S4_PC1_Lab.Models.Producto
+@{
+    ViewData["Title"] = "Producto";
+}
+
+<div class="container">
+    <form asp-controller="Producto" asp-action="Create">
+        <h1 class="text-center display-4">Formulario de Registro de Productos</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="Nombre" class="control-label">Nombre:</label>
+                <input asp-for="Nombre" class="form-control" type="text" placeholder="Ingrese el nombre del producto"/>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Categoria" class="control-label">Categorias:</label>
+                <select asp-for="Categoria" class="custom-select" id="inputGroupSelect01">
+                    <option velue="Sistemas">Fantasia</option>
+                    <option value="Aeronautica">Aeronautica</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Arquitectura">Arquitectura</option>
+                </select>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="Precio" class="control-label">Precio:</label>
+                <input asp-for="Precio" class="form-control" type="text" placeholder="Ingrese el Precio del producto"/>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Descuento" class="control-label">Porcentaje de descuento(%):</label>
+                <input asp-for="Descuento" class="form-control" type="text" placeholder="Ingrese el Descuento del producto"/>
+            </div>   
+        </div>
+        </br> 
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar Producto</button>
+        </div>
+    </form>
+
+    <h1>@ViewData["Message"]</h1>
+</div>
