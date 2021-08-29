@@ -6,7 +6,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Create New +</a>
 </p>
 <table class="table">
     <thead>
@@ -30,7 +30,8 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>    
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Del</a> 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)

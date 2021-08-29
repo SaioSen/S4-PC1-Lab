@@ -54,6 +54,14 @@ namespace S4_PC1_Lab.Controllers
              return View(objProducto);
         }
 
+        public IActionResult Delete(int id)
+        {
+            Producto objProducto = _context.DataProductos.Find(id);
+            _context.DataProductos.Remove(objProducto);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }
